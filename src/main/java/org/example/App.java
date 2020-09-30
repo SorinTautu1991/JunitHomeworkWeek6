@@ -38,4 +38,18 @@ public class App {
                 return (-1);
         }
     }
+
+    public double calculator(String expression) {
+        System.out.println("The result will be printed in mm, as default.");
+        Expression e = new ExpressionBuilder(expression) // I imported a dependency that knows to evaluate an expression like this.
+                .variables("mm", "cm", "m", "dm", "km")
+                .build()
+                .setVariable("mm", 1)
+                .setVariable("cm", 10) //Expressing every unit in mm
+                .setVariable("dm", 100) //in mm
+                .setVariable("m", 1000) //in mm
+                .setVariable("km", 1000000); //in mm
+        double result = e.evaluate();
+        return result;
+    }
 }

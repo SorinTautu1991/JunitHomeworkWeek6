@@ -54,4 +54,13 @@ public class AppTest {
         double expectedResult = 0.5136;
         assertEquals(expectedResult, myResult, 0.1);
     }
+
+    @Test
+    public void testSixOverloadedCalculatorDefaultMm(){
+        App app6 = new App();
+        double myResult = app6.calculator("1km + 2km - 3km + 2m - 5dm + 2000mm");
+        System.out.println("My result ->> " + myResult);
+        double expectedResult = 3500;
+        assertEquals(expectedResult, myResult, 0.1);
+    }
 }
